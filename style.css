@@ -6,7 +6,7 @@
     --secondary-dark-color: #453cSc;
 
     --white-color: #ffffff;
-    --light-bg-color: #f2f3f5
+    --light-bg-color: #f2f3f5;
     --light-text-color: #7c899a;
     --border-color: #e5e8ec;
     --dark-color: #0a021c;
@@ -92,6 +92,8 @@ h4{
     font-weight: var(--fw6);
 }
 
+
+
 /*
 Reusable selector
 */
@@ -127,7 +129,6 @@ Reusable selector
     gap: 1em;
 }
 
-
 .main-links a:hover{
     color: var(--secondary-color);
 }
@@ -151,6 +152,100 @@ Reusable selector
 .mobile-hide {
     display: none;
 }
+.object-cover img {
+    position: absolute;
+    object-fit: cover;
+    width: var(--percent100);
+    height: var(--percent100);
+    display: block;
+}
+.products .media {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.primary-button, .secondary-button, .light-button {
+    font-size: var(--font-small);
+    padding: 0.9em 2em;
+    height: auto;
+    width: fit-content;
+    border-radius: 2em;
+    transition: var(--trans-background-color);
+}
+.primary-button {
+    background-color: var(--primary-color);
+    columns: var(--white-color);
+}
+.primary-button:hover {
+    background-color: var(--dark-color);
+}
+.secondary-button {
+    background-color: var(--secondary-dark-color);
+    color: var(--white-color);
+}
+.secondary-button:hover {
+    background-color: var(--light-bg-color);
+    color: var(--secondary-dark-color);
+}
+.light-button {
+    background-color: var(--light-bg-color);
+}
+.light-button:hover {
+    background-color: var(--secondary-dark-color);
+    color: var(--white-color);
+}
+.view-all {
+    font-size: var(--font-small);
+    display: flex;
+    gap: 1em;
+    transition: var(--trans-color);
+}
+
+
+
+/*
+Structure styling
+*/
+
+
+/*
+01. HEADER
+ a. Header-Top
+*/
+.header-top .wrapper {
+    font-size: var(--font-small);
+    font-weight: var(--fw3);
+    justify-content: space-between;
+    line-height: 42px;
+}
+.header-top .wrapper ul {
+    gap: 2em;
+}
+.header-top li {
+    position: relative;
+}
+.header-top ul ul {
+    position: absolute;
+    left: -1em;
+    line-height: 2em;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    display: none;
+}
+.header-top .right ul ul li a {
+    padding: 0.25em 1em;
+}
+.header-top .right ul ul li.current a {
+    background-color: var(--border-color);
+}
+.header-top li:hover ul {
+    display: block;
+}
+
+
+
+
 
 /*
 * 01. Header----------------------
@@ -192,7 +287,7 @@ Reusable selector
     height: 38px;
     border-radius: var(--percent50);
     background-color: var(--light-bg-color);
-    z-index: -1
+    z-index: -1;
 }
 .circle::before {
     content: '';
@@ -231,7 +326,7 @@ nav .fly-item {
     margin-left: auto;
 }
 .header-nav .right .icon-large {
-    position: relative
+    position: relative;
 }
 .header-nav .right .fly-item {
     top: 0;
@@ -240,46 +335,27 @@ nav .fly-item {
     background-color: var(--secondary-dark-color);
     border-radius: var(--percent50);
 }
-
-
-/*Header-Top*/
-.header-top .wrapper {
-    font-size: var(--font-small);
-    font-weight: var(--fw3);
-    justify-content: space-between;
-    line-height: 42px;
-}
-.header-top .wrapper ul {
-    gap: 2em;
-}
-.header-top li {
-    position: relative;
-}
-.header-top ul ul {
-    position: absolute;
-    left: -1em;
-    line-height: 2em;
-    background-color: var(--white-color);
-    border: 1px solid var(--border-color);
+.mega .flexcol {
+    flex: 1;
+    min-width: 180px;
+    padding-right: 2.5em;
+    margin-bottom: 1.5em;
     z-index: 1;
-    display: none;
 }
-.header-top .right ul ul li a {
-    padding: 0.25em 1em;
-}
-.header-top .right ul ul li.current a {
-    background-color: var(--border-color);
-}
-.header-top li:hover ul {
-    display: block;
-}
+
+
+
+/*
+01. HEADER
+ c. Header Main, Departments Category
+*/
 
 
 /*
 15. Responsive
 */
 
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
     .container{
         padding: 0 2em;
     }
@@ -299,6 +375,78 @@ nav .fly-item {
     }
     .header-nav .right li > a {
         margin-left: 1em;
+    }
+
+
+
+    /*Mega menu*/
+    nav .mega {
+        position: absolute;
+        width: var(--percent100);
+        height: auto;
+        top: auto;
+        left: 0;
+        right: 0;
+        padding: 2.5em;
+        line-height: 2em;
+        background-color: var(--light-bg-color);
+        box-shadow: rgb(0 0 0 / 20%) 0 30px 20px -30%;
+        z-index: 100%;
+        display: none;
+    }
+
+    nav li.has-child:hover .mega {
+        display: block;
+    }
+    nav .mega .wrapper {
+        display: flex;
+    }
+    nav .mega h4 {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+    nav .mega ul {
+        font-size: var(--font-small);
+    }
+    nav .mega .women-brands {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100px;
+    }
+    nav .mega .women-brands li {
+        min-width: 80px;
+    }
+    nav .mega .view-all {
+        margin-top: 1em;
+    }
+    nav .mega .products {
+        flex: 2;
+        padding: 0;
+        align-items: center;
+        position: relative;
+    }
+    nav .mega .products .row {
+        width: var(--percent100);
+    }
+    nav .mega .products .media {
+        height: 400px;
+    }
+    nav .mega .products .text-content {
+        line-height: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        margin-top: 0.5em;
+        position: absolute;
+        bottom: 4em;
+        width: var(--percent100);
+    }
+    nav .mega .products .text-content h4 {
+        font-size: 2em;
+        font-weight: var(--fw8);
+        text-align: center;
+        color: var(--secondary-dark-color);
     }
 }
 
