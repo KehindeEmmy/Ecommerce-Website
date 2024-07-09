@@ -44,19 +44,19 @@ function toggle(e) {
 //Slider
 const swiper = new Swiper('.swiper', {
     // Optional parameters
-    direction: 'vertical',
+//    direction: 'vertical',
     loop: true,
   
-    // If we need pagination  
+    // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
   
     // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+//    navigation: {
+//      nextEl: '.swiper-button-next',
+//      prevEl: '.swiper-button-prev',
+//    },
   
     // And if we need scrollbar
     scrollbar: {
