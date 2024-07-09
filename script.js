@@ -44,7 +44,7 @@ function toggle(e) {
 //Slider
 const swiper = new Swiper('.swiper', {
     // Optional parameters
-//    direction: 'vertical',
+    direction: 'vertical',
     loop: true,
   
     // If we need pagination
