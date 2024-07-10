@@ -43,23 +43,34 @@ function toggle(e) {
 
 //Slider
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
- navigation: {
-   nextEl: '.swiper-button-next',
-   prevEl: '.swiper-button-prev',
- },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+  // Optional parameters
+//  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+// Show search
+const searchButton = document.querySelector('.t-search'),
+      tClose = document.querySelector('.search-close'),
+      showClass = document.querySelector('.site');
+searchButton.addEventListener('click', function(){
+  showClass.classList.toggle('showsearch')
+})
+tClose.addEventListener('click', function() {
+  showClass.classList.remove('showsearch')
+})
