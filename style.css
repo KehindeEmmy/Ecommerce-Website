@@ -1101,12 +1101,197 @@ form.search button:hover {
     visibility: inherit;
 }
 
+/* PAGE SINGLE */
+
+/* -------------------------
+    PAGE SINGLE
+ a. Department Menu
+ -------------------------*/
+ .page-home .dpt-cat .dpt-trigger,
+ .dpt-trigger .ri-close-line,
+ .showdpt .dpt-trigger .ri-menu-3-line {
+    display: none;
+ }
+ .showdpt .dpt-trigger .ri-close-line {
+    display: block;
+ }
+
+
+ /* -------------------------
+    PAGE SINGLE
+ b. Breadcrumb
+ -------------------------*/
+ .breadcrumb {
+    font-size: var(--font-small);
+    margin-bottom: 2em;
+ }
+ .breadcrumb li:not(:last-child)::after {
+    content: '/';
+    padding: 0 0.35em;
+ }
+ .breadcrumb li:last-child {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    columns: var(--light-text-color);
+ }
+
+
+  /* -------------------------
+    PAGE SINGLE
+ c. Product details
+ -------------------------*/
+ .products.one .item {
+    flex-direction: column;
+ }
+ .products.one .price .discount {
+    font-size: 1em;
+    font-weight: var(--fw7);
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+    bottom: auto;
+    padding: 1em;
+    z-index: 2;
+    background-color: var(--dark-color);
+    border-radius: var(--percent50);
+    color: var(--white-color);
+    margin: 0.5em;
+ }
+ .products.one :where(.big-image, .small-image) {
+    overflow: hidden;
+ }
+ .products.one .big-image {
+    position: relative;
+    margin-bottom: 1em;
+ }
+ .products.one :where(.big-image, .small-image) img {
+    object-fit: cover;
+    width: var(--percent100);
+    height: var(--percent100);
+    display: block;
+ }
+ .products.one .thumbnail-show {
+    position: relative;
+    width: 130px;
+    height: 110px;
+    overflow: hidden;
+    margin: 0 2em 2em 0;
+ }
+ .products :is(.swiper-button-next, .swiper-button-prev) {
+    outline: 0;
+    color: var(--secondary-dark-color);
+    transition: var(--trans-background), transform .3s;
+ }
+ .products .big-image:hover .swiper-button-next {
+    transform: translateX(10px);
+ }
+ .products .big-image:hover .swiper-button-prev {
+    transform: translateX(-10px);
+ }
+ .products :is(.swiper-button-next, .swiper-button-prev)::after {
+    font-size: 1.5em;
+ }
+ .products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+    background-color: var(--light-bg-color);
+ }
+
+ /* Lightbox: go to fslightbox.com */
+
+
+
+
+   /* -------------------------
+    PAGE SINGLE
+ d. Product description
+ -------------------------*/
+ .products.one .available {
+    font-size: var(--font-small);
+    font-weight: var(--fw5);
+    padding: 0.5em;
+    margin-right: 1em;
+    border-radius: 3px;
+    color: #10ac84;
+    background-color: var(--light-bg-color);
+ }
+ .products.one .add-review {
+    color: var(--dark-color);
+ }
+ .products.one .price {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex-wrap: wrap;
+ }
+ .products.one .price .current {
+    font-size: 2.5em;
+ }
+ .products .variant form {
+    display: flex;
+    margin-top: 0.5em;
+ }
+ .products .variant form p {
+    position: relative;
+    margin: 0 0.5em 0.5em;
+ }
+ .products .variant .circle {
+    display: block;
+    position: static;
+    top: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+ }
+ .products .variant input {
+    clip: react(0,0,0,0);
+    overflow: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+ }
+
+
+
+
+   /* -------------------------
+    PAGE SINGLE
+ e. Product Review
+ -------------------------*/
+
+
+   /* -------------------------
+    PAGE SINGLE
+ f. Product Review Form
+ -------------------------*/
+
+
+
+   /* -------------------------
+    PAGE SINGLE
+ g. Special Offer
+ -------------------------*/
+
+
+
+
 /*
     15. Responsive
 */
 @media screen and (min-width: 481px) {
     .products.main .item {
         flex: 0 0 50%;
+    }
+
+    /* Page single */
+    .products.one .big-image {
+        margin-bottom: 2em;
+    }
+    .products.one .image-show {
+        height: 680px;
+    }
+    .products.one .thumbnail-show {
+        height: 160px;
     }
 }
 
@@ -1122,6 +1307,10 @@ form.search button:hover {
     }
     .products.main .item {
         flex: 0 0 33.3333%;
+    }
+    .products.one .row {
+        flex: 0 0  50%;
+        width: 50%;
     }
 }
 
@@ -1319,5 +1508,14 @@ form.search button:hover {
         justify-content: space-between;
         align-items: center;
     }
+
+    /* Page Single */
+    #page:not(.page-home) .dpt-menu {
+        display: none;
+    }
+    #page-showdpt .dpt-menu {
+        display: block;
+    }
 }
+
 
