@@ -1250,6 +1250,40 @@ form.search button:hover {
     height: 0;
     width: 0;
  }
+ .products .variant label::before {
+    opacity: 1;
+ }
+ .products .variant label[for="cogrey"]::before {
+    background-color: #576574;
+ }
+ .products .variant label[for="coblue"]::before {
+    background-color: #45a0ff;
+ }
+ .products .variant label[for="cogreen"]::before {
+    background-color: #1dd1a1;
+ }
+ .single-product .variant form p input:checked + label {
+    background-color: transparent;
+    border: 2px solid var(--dark-color);
+ }
+ .products .sizes .variant label::before {
+    background-color: var(--white-color);
+ }
+ .products .sizes .variant label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--percent100);
+    height: var(--percent100);
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .single-product .sizes .variant form p input:checked + label::before {
+    background-color: var(--dark-color);
+ }
+
 
 
 
